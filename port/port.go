@@ -31,7 +31,7 @@ var commom = map[init]string {
 	3306: "mysql",
 	5000: "unpn",
 	8080: "https-proxy",
-	8443: "https-alt"
+	8443: "https-alt",
 }
 
 func ScanPort(hostname string, port int) bool {
