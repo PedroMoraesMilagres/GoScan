@@ -1,8 +1,8 @@
 package port
 
-import("fmt"; "net"; "strconv"; "sync"; "time" )
+import("net"; "strconv"; "time" )
 
-var commom = map[init]string {
+var commom = map[int]string {
   7:    "echo",
 	20:   "ftp",
 	21:   "ftp",
