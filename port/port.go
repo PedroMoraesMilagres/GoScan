@@ -62,7 +62,22 @@ var common = map[int]string{
 }
 
 func ClearScreen(){
-  exec.Command("clear")
+  out, err := exec.Command("ls").Output()
+
+    if err != nil {
+        fmt.Printf("%s", err)
+    }
+    fmt.Println("Command Successfully Executed")
+    output := string(out[:])
+    fmt.Println(output)
+
+    out, err = exec.Command("pwd").Output()
+    if err != nil {
+        fmt.Printf("%s", err)
+    }
+    fmt.Println("Command Successfully Executed")
+    output = string(out[:])
+    fmt.Println(output)
 }
 
 func ScanPort(protocol, hostname, service string, port int, resultChannel chan PortResult, wg *sync.WaitGroup) {
