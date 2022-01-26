@@ -1,11 +1,18 @@
 package main
 
-import("fmt"; "time"; "github.com/ArthurHydr/GoScan/port")
+import("flag"; "os"; "os/exec"; "github.com/ArthurHydr/GoScan/port")
+
+func ClearString(){
+  c := exec.Command("clear")
+  c.Stdout = os.Stdout
+  c.Run()
+}
 
 func main() {
-	start := time.Now()
-	port.GetOpenPorts("Businesscorp.com.br", port.PortRange{Start: 1, End: 10000})
+  ClearString()
+ 
+  host := flag.String("host", "default value", "string")
+  flag.Parse() 
 
-	elapsed := time.Since(start)
-	fmt.Printf("Scan duration: %s", elapsed)
+	port.GetPorts(*host, port.PortRange{Start: 1, End: 10000})
 }
