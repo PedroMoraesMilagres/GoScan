@@ -1,5 +1,7 @@
 package port
 
+import("fmt"; "net"; "strconv"; "sync"; "time" )
+
 var commom = map[init]string {
   7:    "echo",
 	20:   "ftp",
