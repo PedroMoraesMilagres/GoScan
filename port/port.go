@@ -6,6 +6,7 @@ import (
 	"strconv"
 	"sync"
 	"time"
+  "os/exec"
 )
 
 type PortResult struct {
@@ -60,6 +61,10 @@ var common = map[int]string{
 	8443: "https-alt",
 }
 
+func ClearScreen(){
+  exec.Command("clear")
+}
+
 func ScanPort(protocol, hostname, service string, port int, resultChannel chan PortResult, wg *sync.WaitGroup) {
 	defer wg.Done()
 	result := PortResult{Port: port, Service: service}
@@ -110,7 +115,7 @@ func ScanPorts(hostname string, ports PortRange) (ScanResult, error) {
 
 func DisplayScanResult(result ScanResult) {
 	ip := result.ip[len(result.ip)-1]
-	fmt.Printf("Portas abertas em %s (%s)\nPorta | Serviço\n", result.hostname, ip.String())
+  fmt.Printf("Hostname: %s | IP: %s\n\nPort | Service\n", result.hostname, ip.String())
 	for _, v := range result.results {
 		if v.State {
 			fmt.Printf("%d	%s\n", v.Port, v.Service)
