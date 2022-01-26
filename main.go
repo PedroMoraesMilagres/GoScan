@@ -1,10 +1,11 @@
 package main
 
-import("fmt"; "github.com/ArthurHydr/GoScan/port")
+import("fmt"; "time"; "github.com/ArthurHydr/GoScan/port")
 
 func main() {
-  result := port.ScanPort("scanme.nmap.org", 80)
-  fmt.Println(result)
+	start := time.Now()
+	port.GetOpenPorts("Businesscorp.com.br", port.PortRange{Start: 1, End: 10000})
+
+	elapsed := time.Since(start)
+	fmt.Printf("Scan duration: %s", elapsed)
 }
-
-
