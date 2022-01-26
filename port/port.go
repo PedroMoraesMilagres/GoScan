@@ -6,7 +6,6 @@ import (
 	"strconv"
 	"sync"
 	"time"
-  "os/exec"
 )
 
 type PortResult struct {
@@ -61,25 +60,6 @@ var common = map[int]string{
 	8443: "https-alt",
 }
 
-func ClearScreen(){
-  out, err := exec.Command("ls").Output()
-
-    if err != nil {
-        fmt.Printf("%s", err)
-    }
-    fmt.Println("Command Successfully Executed")
-    output := string(out[:])
-    fmt.Println(output)
-
-    out, err = exec.Command("pwd").Output()
-    if err != nil {
-        fmt.Printf("%s", err)
-    }
-    fmt.Println("Command Successfully Executed")
-    output = string(out[:])
-    fmt.Println(output)
-}
-
 func ScanPort(protocol, hostname, service string, port int, resultChannel chan PortResult, wg *sync.WaitGroup) {
 	defer wg.Done()
 	result := PortResult{Port: port, Service: service}
@@ -128,9 +108,9 @@ func ScanPorts(hostname string, ports PortRange) (ScanResult, error) {
 	return scanned, nil
 }
 
-func DisplayScanResult(result ScanResult) {
+func DisplayResult(result ScanResult) {
 	ip := result.ip[len(result.ip)-1]
-  fmt.Printf("Hostname: %s | IP: %s\n\nPort | Service\n", result.hostname, ip.String())
+  fmt.Printf("Hostname: %s | IP: %s\n\nPORT | SERVICE\n", result.hostname, ip.String())
 	for _, v := range result.results {
 		if v.State {
 			fmt.Printf("%d	%s\n", v.Port, v.Service)
@@ -138,11 +118,11 @@ func DisplayScanResult(result ScanResult) {
 	}
 }
 
-func GetOpenPorts(hostname string, ports PortRange) {
+func GetPorts(hostname string, ports PortRange) {
 	scanned, err := ScanPorts(hostname, ports)
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		DisplayScanResult(scanned)
+		DisplayResult(scanned)
 	}
 }
