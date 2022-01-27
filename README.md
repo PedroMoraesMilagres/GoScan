@@ -68,4 +68,4 @@ We thank the following people who contributed to this project:
 
 This project is under license. See the [LICENSE](LICENSE.md) file for more details.
 
-[⬆ Go to top](## 💻 Requirements)
+[⬆ Go to top](## 📃 Requirements)
