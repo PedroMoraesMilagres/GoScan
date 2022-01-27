@@ -58,6 +58,8 @@ var common = map[int]string{
 	5000: "unpn",
 	8080: "https-proxy",
 	8443: "https-alt",
+  9929: "nping-echo",
+  31337: "Elite",
 }
 
 func ScanPort(protocol, hostname, service string, port int, resultChannel chan PortResult, wg *sync.WaitGroup) {
@@ -110,7 +112,7 @@ func ScanPorts(hostname string, ports PortRange) (ScanResult, error) {
 
 func DisplayResult(result ScanResult) {
 	ip := result.ip[len(result.ip)-1]
-  fmt.Printf("Hostname: %s | IP: %s\n\nPORT | SERVICE\n", result.hostname, ip.String())
+  fmt.Printf("Hostname: %s | IP: %s\nPORT | SERVICE\n", result.hostname, ip.String())
 	for _, v := range result.results {
 		if v.State {
 			fmt.Printf("%d	%s\n", v.Port, v.Service)
