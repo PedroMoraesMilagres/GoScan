@@ -25,7 +25,7 @@ func main() {
   ClearString()
   menu()
  
-  host := flag.String("host", "default value", "string")
+  host := flag.String("host", "string", "host to be scanned")
 
   flag.Parse() 
 
