@@ -33,6 +33,15 @@ git clone https://github.com/ArthurHydr/GoScan.git
 
 To run GoScan:
 
+**Linux**:
+```
+./main -host <host>
+or
+go run main.go -host <host>
+```
+
+**Everyone**:
+
 ```
 go run main.go
 ```
