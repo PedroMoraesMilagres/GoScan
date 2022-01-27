@@ -4,7 +4,7 @@
 <img src="https://i.imgur.com/iFksXR2.png" alt="Output do GoScan">
 
 
-# 🦫GoScan
+# 🦫 GoScan
 > **GoScan** is a port-scanner made entirely in Go-lang. The purpose of the tool is to be fast, dynamic and simple so that a professional in the CyberSecurity area can make an optimized list of ports
 
 ## 📃 Requirements
