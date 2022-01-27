@@ -35,8 +35,11 @@ To run GoScan:
 
 **Linux**:
 ```
+sudo chmod +x ./main
 ./main -host <host>
+```
 or
+```
 go run main.go -host <host>
 ```
 
