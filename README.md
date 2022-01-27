@@ -53,7 +53,7 @@ We thank the following people who contributed to this project:
 <table>
   <tr>
     <td align="center">
-      <a href="#">
+      <a href="https://github.com/ArthurHydr">
         <img src="https://avatars3.githubusercontent.com/u/61481946" width="100px;" alt="Arthur Ottoni on GitHub"/><br>
         <sub>
           <b>Arthur Ottoni</b>
