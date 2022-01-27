@@ -26,7 +26,7 @@ type ScanResult struct {
 
 var common = map[int]string{
 	7:    "echo",
-  19:   "chargen",
+ 	19:   "chargen",
 	20:   "ftp",
 	21:   "ftp",
 	22:   "ssh",
@@ -123,7 +123,7 @@ func DisplayResult(result ScanResult) {
 func GetPorts(hostname string, ports PortRange) {
 	scanned, err := ScanPorts(hostname, ports)
 	if err != nil {
-		fmt.Println(err)
+    fmt.Println("Misuse! Correct way to use: ./main.go -host=<address>")
 	} else {
 		DisplayResult(scanned)
 	}
