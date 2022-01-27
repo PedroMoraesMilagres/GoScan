@@ -1,30 +1,28 @@
-# GoScan
-
-
 <p>
-   <img alt="Languages" src="https://img.shields.io/badge/Go->=go1.17.6-blue.svg"> 
+   <img alt="Languages" src="https://img.shields.io/badge/Go->= go1.17.6-blue.svg"> 
 </p>
+<img src="https://i.imgur.com/iFksXR2.png" alt="Output do GoScan">
 
-<img src="https://i.imgur.com/uqx4tCN.png" alt="Output do GoScan">
+> **GoScan** is a port-scanner made entirely in Go-lang. The purpose of the tool is to be fast, dynamic and simple so that a professional in the CyberSecurity area can make an optimized list of ports
 
-> GoScan is a port-scanner made entirely in Go lang. The purpose of the tool is to be fast, dynamic and simple so that a professional in the CyberSecurity area can make an optimized list of ports
-
-## 💻 Requirements
+## 📃 Requirements
 
 * `Go1.17.6` or superior
 *  `Windows / Linux / BSD / Mac`
-* OBS: Caso utilize o windows, necessário a execução pelo powershell
+* OBS: If you use windows, you need to run it using powershell
 
 ## 🚀 Installation
 
-To install GoScan follow the steps
+To install **GoScan** follow the steps
 
-Linux  / BSD / macOS:
+**Linux  / BSD / macOS**:
+
 ```
 git clone https://github.com/ArthurHydr/GoScan.git
 ```
 
-Windows:
+**Windows**:
+
 ```
 git clone https://github.com/ArthurHydr/GoScan.git
 ```
@@ -66,8 +64,8 @@ We thank the following people who contributed to this project:
 
 
 
-## 📝 Licença
+## 📝 Licence
 
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+This project is under license. See the [LICENSE](LICENSE.md) file for more details.
 
-[⬆ Voltar ao topo](#GoScan)
+[⬆ Go to top](## 💻 Requirements)
