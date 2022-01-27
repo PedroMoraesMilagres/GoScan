@@ -25,39 +25,39 @@ type ScanResult struct {
 }
 
 var common = map[int]string{
-	7:    "echo",
+  7:    "echo",
  	19:   "chargen",
-	20:   "ftp",
-	21:   "ftp",
-	22:   "ssh",
-	23:   "telnet",
-	25:   "smtp",
-	43:   "whois",
-	53:   "dns",
-	67:   "dhcp",
-	68:   "dhcp",
-	80:   "http",
-	110:  "pop3",
+  20:   "ftp",
+  21:   "ftp",
+  22:   "ssh",
+  23:   "telnet",
+  25:   "smtp",
+  43:   "whois",
+  53:   "dns",
+  67:   "dhcp",
+  68:   "dhcp",
+  80:   "http",
+  110:  "pop3",
   111:  "rpcbind",
   123:  "ntp",
-	137:  "netbios",
-	138:  "netbios",
-	139:  "netbios",
-	143:  "imap4",
-	443:  "https",
-	513:  "rlogin",
-	540:  "uucp",
-	554:  "rtsp",
-	587:  "smtp",
-	873:  "rsync",
-	902:  "vmware",
-	989:  "ftps",
-	990:  "ftps",
-	1194: "openvpn",
-	3306: "mysql",
-	5000: "unpn",
-	8080: "https-proxy",
-	8443: "https-alt",
+  137:  "netbios",
+  138:  "netbios",
+  139:  "netbios",
+  143:  "imap4",
+  443:  "https",
+  513:  "rlogin",
+  540:  "uucp",
+  554:  "rtsp",
+  587:  "smtp",
+  873:  "rsync",
+  902:  "vmware",
+  989:  "ftps",
+  990:  "ftps",
+  1194: "openvpn",
+  3306: "mysql",
+  5000: "unpn",
+  8080: "https-proxy",
+  8443: "https-alt",
   9929: "nping-echo",
   31337: "Elite",
 }
@@ -75,7 +75,6 @@ func ScanPort(protocol, hostname, service string, port int, resultChannel chan P
 	defer conn.Close()
 	result.State = true
 	resultChannel <- result
-	return
 }
 
 func ScanPorts(hostname string, ports PortRange) (ScanResult, error) {
@@ -123,7 +122,7 @@ func DisplayResult(result ScanResult) {
 func GetPorts(hostname string, ports PortRange) {
 	scanned, err := ScanPorts(hostname, ports)
 	if err != nil {
-    fmt.Println("Misuse! Correct way to use: ./main.go -host=<address>")
+    fmt.Println("Misuse! Correct way to use: ./main.go -host <address>")
 	} else {
 		DisplayResult(scanned)
 	}
