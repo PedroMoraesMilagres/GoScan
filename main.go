@@ -2,20 +2,7 @@ package main
 
 import("flag"; "os"; "os/exec"; "github.com/ArthurHydr/GoScan/port")
 
-
 func menu(){
-  println(":'######::::'#######:::'######:::'######:::::'###::::'##::: ##:")
-  println("'##... ##::'##.... ##:'##... ##:'##... ##:::'## ##::: ###:: ##:")
-  println("'##:::..::: ##:::: ##: ##:::..:: ##:::..:::'##:. ##:: ####: ##:")
-  println("'##::'####: ##:::: ##:. ######:: ##:::::::'##:::. ##: ## ## ##:")
-  println("'##::: ##:: ##:::: ##::..... ##: ##::::::: #########: ##. ####:")
-  println("'##::: ##:: ##:::: ##:'##::: ##: ##::: ##: ##.... ##: ##:. ###:")
-  println(" .######:::. #######::. ######::. ######:: ##:::: ##: ##::. ##:")
-  println(":......:::::.......::::......::::......:::..:::::..::..::::..::")
-  println("\n GoScan v1.0")
-}
-
-func menu2(){
   println("  .d8888b.          .d8888b.                         ") 
   println(" d88P  Y88b        d88P  Y88b                        ")
   println(" 888    888        Y88b.                              ")
@@ -36,9 +23,10 @@ func ClearString(){
 
 func main() {
   ClearString()
-  menu2()
+  menu()
  
   host := flag.String("host", "default value", "string")
+
   flag.Parse() 
 
 	port.GetPorts(*host, port.PortRange{Start: 1, End: 31337})
