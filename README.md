@@ -19,15 +19,13 @@ To install **GoScan** follow the steps
 
 **Linux  / BSD / macOS**:
 
-```
-git clone https://github.com/ArthurHydr/GoScan.git
-```
+Click [here](https://github.com/ArthurHydr/GoScan/releases/download/binary/goscan) to install. 
+
 
 **Windows**:
 
-```
-git clone https://github.com/ArthurHydr/GoScan.git
-```
+Click [here](https://github.com/ArthurHydr/GoScan/releases/download/binary/goscan.exe) to install.
+
 
 ## ☕ Use 
 
@@ -36,17 +34,19 @@ To run GoScan:
 **Linux**:
 ```
 sudo chmod +x ./main
-./goscan -host <host>
-
-or
-
-go run main.go -host <host>
+./goscan -host <address>
 ```
 
-**Everyone**:
-
+**MacOS**:
 ```
+git clone https://github.com/ArthurHydr/GoScan.git
 go run main.go
+```
+
+**Windows**:
+
+```
+./goscan.exe -host <address>
 ```
 
 ## 📫 Contribuite
