@@ -36,7 +36,7 @@ To run GoScan:
 **Linux**:
 ```
 sudo chmod +x ./main
-./main -host <host>
+./goscan -host <host>
 
 or
 
