@@ -30,4 +30,5 @@ func main() {
   flag.Parse() 
 
 	port.GetPorts(*host, port.PortRange{Start: 1, End: 31337})
+  println("\n")
 }
