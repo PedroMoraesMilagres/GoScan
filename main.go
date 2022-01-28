@@ -1,6 +1,12 @@
 package main
 
-import("fmt"; "flag"; "os"; "os/exec"; "github.com/ArthurHydr/GoScan/port")
+import(
+  "fmt" 
+  "flag" 
+  "os" 
+  "os/exec" 
+  "github.com/ArthurHydr/GoScan/port"
+)
 
 func menu(){
   fmt.Println("  .d8888b.          .d8888b.                         ") 
