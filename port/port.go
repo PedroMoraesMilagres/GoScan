@@ -65,10 +65,12 @@ var common = map[int]string{
 
 func ScanPort(protocol, hostname, service string, port int, resultChannel chan PortResult, wg *sync.WaitGroup) {
   defer wg.Done()
+  
   result := PortResult{Port: port, Service: service}
   address := hostname + ":" + strconv.Itoa(port)
   conn, err := net.DialTimeout(protocol, address, 1*time.Second)
-	if err != nil {
+	
+  if err != nil {
     result.State = false
     resultChannel <- result
     return
@@ -82,26 +84,28 @@ func ScanPorts(hostname string, ports PortRange) (ScanResult, error) {
   var results []PortResult
   var scanned ScanResult
   var wg sync.WaitGroup
-
+ 
   resultChannel := make(chan PortResult, ports.End-ports.Start)
-
-  addr, err := net.LookupIP(hostname)
+  addr, err := net.LookupIP(hostname) 
+  
   if err != nil {
     return scanned, err
   }
+  
   for i := ports.Start; i <= ports.End; i++ {
     if service, ok := common[i]; ok {
       wg.Add(1)
       go ScanPort("tcp", hostname, service, i, resultChannel, &wg)
-
+    }
   }
-  }
+  
   wg.Wait()
   close(resultChannel)
+  
   for result := range resultChannel {
     results = append(results, result)
   }
-
+  
   scanned = ScanResult{
     hostname: hostname,
     ip:       addr,
@@ -113,6 +117,7 @@ func ScanPorts(hostname string, ports PortRange) (ScanResult, error) {
 func DisplayResult(result ScanResult) {
   ip := result.ip[len(result.ip)-1]
   fmt.Printf("Hostname: %s | IP: %s\nPORT | SERVICE\n", result.hostname, ip.String())
+
   for _, v := range result.results {
     if v.State {
       fmt.Printf("%d	%s\n", v.Port, v.Service)
@@ -122,6 +127,7 @@ func DisplayResult(result ScanResult) {
 
 func GetPorts(hostname string, ports PortRange) {
   scanned, err := ScanPorts(hostname, ports)
+  
   if err != nil {
     fmt.Println("Misuse! Correct way to use: ./main.go -host <address>")
   } else {
