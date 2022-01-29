@@ -74,6 +74,14 @@ We thank the following people who contributed to this project:
         </sub>
       </a>
     </td>
+    <td align="center">
+      <a href="https://github.com/gabrielfelipecsk">
+        <img src="https://avatars.githubusercontent.com/u/67423128?v=4" width="100px;" alt="Tux on GitHub"\><br>
+        <sub>
+          <b>Tux</b>
+        </sub>
+      </a>
+     </td> 
 </table>
 
 
