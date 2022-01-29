@@ -20,7 +20,6 @@ func menu(){
   fmt.Println("\nGoScan v1.0\n")
 }
 
-
 func ClearString(){
   c := exec.Command("clear")
   c.Stdout = os.Stdout
