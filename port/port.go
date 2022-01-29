@@ -56,6 +56,7 @@ var common = map[int]string{
   1194: "openvpn",
   3306: "mysql",
   5000: "unpn",
+  7070: "Control Apache",
   8080: "https-proxy",
   8443: "https-alt",
   9929: "nping-echo",
