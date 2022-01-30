@@ -26,14 +26,21 @@ func ClearString(){
   c.Run()
 }
 
+func Scan(){
+  host := flag.String("host", "", "Misuse! Correct way to use: ./main.go -host <address>")
+  flag.Parse() 
+  
+  if *host == "" {
+    fmt.Println("Misuse! Correct way to use: ./main.go -host <address>")
+    os.Exit(1)
+  } else {
+	    port.GetPorts(*host, port.PortRange{Start: 1, End: 31337})
+      println("\n")
+  }
+}
+
 func main() {
   ClearString()
   menu()
- 
-  host := flag.String("host", "string", "host to scan")
-
-  flag.Parse() 
-
-	port.GetPorts(*host, port.PortRange{Start: 1, End: 31337})
-  println("\n")
-}
+  Scan()
+ }
