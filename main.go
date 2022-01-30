@@ -30,7 +30,7 @@ func main() {
   ClearString()
   menu()
  
-  host := flag.String("host", "string", "host to be scanned")
+  host := flag.String("host", "string", "host to scan")
 
   flag.Parse() 
 
