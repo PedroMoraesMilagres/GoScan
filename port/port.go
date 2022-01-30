@@ -126,11 +126,7 @@ func DisplayResult(result ScanResult) {
 }
 
 func GetPorts(hostname string, ports PortRange) {
-  scanned, err := ScanPorts(hostname, ports)
-  
-  if err != nil {
-    fmt.Println("Misuse! Correct way to use: ./main.go -host <address>")
-  } else {
-    DisplayResult(scanned)
+  scanned, _ := ScanPorts(hostname, ports) 
+  DisplayResult(scanned)
   }
-}
+
