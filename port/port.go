@@ -45,6 +45,7 @@ var common = map[int]string{
   139:  "netbios",
   143:  "imap4",
   443:  "https",
+  445:  "Nimda",
   513:  "rlogin",
   540:  "uucp",
   554:  "rtsp",
@@ -55,6 +56,7 @@ var common = map[int]string{
   990:  "ftps",
   1194: "openvpn",
   3306: "mysql",
+  3389: "IANA",
   5000: "unpn",
   7070: "Control Apache",
   8080: "https-proxy",
@@ -116,11 +118,11 @@ func ScanPorts(hostname string, ports PortRange) (ScanResult, error) {
 
 func DisplayResult(result ScanResult) {
   ip := result.ip[len(result.ip)-1]
-  fmt.Printf("Hostname: %s | IP: %s\nPORT | SERVICE\n", result.hostname, ip.String())
+  fmt.Printf("Hostname: %s | IP: %s | Protocolo: TCP\nPORT | SERVICE	|  PORT INFO\n", result.hostname, ip.String())
 
   for _, v := range result.results {
     if v.State {
-      fmt.Printf("%d	%s\n", v.Port, v.Service)
+      fmt.Printf("%d	%s	=> https://www.speedguide.net/port.php?port=%d\n", v.Port, v.Service, v.Port)
     }
   }
 }
