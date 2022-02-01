@@ -50,6 +50,7 @@ var common = map[int]string{
   540:  "uucp",
   554:  "rtsp",
   587:  "smtp",
+  666:  "doom",
   873:  "rsync",
   902:  "vmware",
   989:  "ftps",
