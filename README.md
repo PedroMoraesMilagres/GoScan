@@ -82,6 +82,14 @@ We thank the following people who contributed to this project:
         </sub>
       </a>
      </td> 
+    <td align="center">
+      <a href="https://github.com/PedroMoraesMilagres">
+        <img src="https://avatars.githubusercontent.com/u/35903097?v=4" width="100px;" alt="tupi on GitHub"\><br>
+        <sub>
+          <b>tupi</b>
+        </sub>
+      </a>
+     </td> 
 </table>
 
 
